@@ -1,0 +1,24 @@
+.videoElement {
+    width: 95%;
+    height: 95%;
+    object-fit: cover;
+    border-radius: 16px;
+    perspective: 1000px;
+    /* Rotate the video in 3d */
+    transform: rotateY(10deg) rotateX(10deg);
+}
+
+.videoBehind {
+    display: block;
+    position: absolute;
+    bottom: 6%;
+    right: 5%;
+    content: "";
+    background-color: var(--secondary-color);
+    width: 100%;
+    height: 100%;
+    perspective: 1000px;
+    border-radius: 16px;
+    /* Rotate the video in 3d */
+    transform: rotateY(10deg) rotateX(10deg);
+}
