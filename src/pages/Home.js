@@ -1,9 +1,19 @@
 import Navbar from "../components/Navbar";
-import { Button } from "antd";
-import { SearchOutlined, HomeOutlined } from "@ant-design/icons";
+import { Button, Carousel } from "antd";
+import {
+  SearchOutlined,
+  HomeOutlined,
+  ArrowLeftOutlined,
+  ArrowRightOutlined,
+} from "@ant-design/icons";
 import { useEffect } from "react";
 
+import "@splidejs/react-splide/css";
+
 import "../styles/Home.css";
+import CustomCarousal from "../components/Carousal";
+import MidContent from "../components/MidContent";
+import Footer from "../components/Footer";
 
 const Home = () => {
   const cardData = [
@@ -321,44 +331,89 @@ const Home = () => {
         </div>
       </div>
 
-      <div
-        className={`w-full  text-white relative bg-[var(--primary-color)] flex flex-col justify-evenly items-center p-4 gap-2
-               transition-all duration-300 ease-in-out
-              `}
-        style={{
-          height: "calc(70vh - 120px)",
-        }}
-      >
-        <div className="flex flex-row justify-evenly items-center gap-6 mx-32">
-          <div>
-            <h2 className="text-2xl font-bold text-left">
-              Join the Helpers Group
-            </h2>
-            <p className=" text-left mt-4">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry.
-            </p>
+      <MidContent data={cardData} />
+
+      <CustomCarousal
+        images={[
+          "https://www.efficientindia.com/img/other/ngo.png",
+          "https://rajivgandhingo.wordpress.com/wp-content/uploads/2017/12/about-us-bal-utsav-bangalore-india.jpg",
+          "https://assets.codepen.io/32795/poster.png",
+          "https://rajivgandhingo.wordpress.com/wp-content/uploads/2017/12/about-us-bal-utsav-bangalore-india.jpg",
+          "https://assets.codepen.io/32795/poster.png",
+          "https://www.efficientindia.com/img/other/ngo.png",
+        ]}
+      />
+
+      <div className="w-full flex flex-col justify-center items-center gap-6 my-16 relative p-4">
+        <div
+          style={{
+            backgroundImage: `url("https://media.istockphoto.com/id/1439764294/photo/paint-brush-stroke-blue-on-white-background.jpg?s=612x612&w=0&k=20&c=MUinl2YlJiYFcX05EJ05tDWvqJMC5WKuO6aicxX2_F4=")`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            filter: "grayscale(1) brightness(1.5)",
+            width: "100%",
+            height: "100%",
+          }}
+          className="absolute -z-10 "
+        />
+        <h1 className="text-4xl font-bold text-[var(--text-color)]">
+          Anyone can be a volunteer
+        </h1>
+        <h1 className="text-2xl font-bold">Join us now</h1>
+        <p className="text-lg text-center w-1/3">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec.
+        </p>
+        <Button
+          style={{
+            fontSize: "20px",
+            fontWeight: "300",
+          }}
+          className={`!px-4 !py-4`}
+          size="large"
+          shape="round"
+        >
+          Join Now
+        </Button>
+      </div>
+
+      <div className="flex flex-row justify-evenly items-center gap-6 mx-32 my-16 text-center" >
+        <div className="w-2/3">
+          <h1 className="text-4xl font-bold"><span className="text-[var(--primary-color)]">Our</span> donners</h1>
+          <p className="flex justify-center items-center px-16 my-8">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec.
+          </p>
+          <div className="flex flex-row justify-evenly items-center gap-6 ">
+            <img
+              src="https://www.efficientindia.com/img/other/ngo.png"
+              className="w-1/3 aspect-square border-2 border-black"
+            />
+            <img
+              src="https://www.efficientindia.com/img/other/ngo.png"
+              className="w-1/3 aspect-square border-2 border-black"
+            />
           </div>
-          <div>
-            <h2 className="text-2xl font-bold text-left">
-              Join the Helpers Group
-            </h2>
-            <p className=" text-left mt-4">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry.
-            </p>
-          </div>
-          <div>
-            <h2 className="text-2xl font-bold text-left">
-              Join the Helpers Group
-            </h2>
-            <p className=" text-left mt-4">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry.
-            </p>
+        </div>
+        <div className="w-2/3">
+          <h1 className="text-4xl font-bold">
+          <span className="text-[var(--primary-color)]">Our</span> donners</h1>
+          <p className="flex justify-center items-center px-16 my-8">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec.
+          </p>
+          <div className="flex flex-row justify-evenly items-center gap-6 ">
+            <img
+              src="https://www.efficientindia.com/img/other/ngo.png"
+              className="w-1/3 aspect-square border-2 border-black"
+            />
+
           </div>
         </div>
       </div>
+
+      <Footer />  
     </div>
   );
 };
