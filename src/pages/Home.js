@@ -1,11 +1,6 @@
 import Navbar from "../components/Navbar";
 import { Button, Carousel } from "antd";
-import {
-  SearchOutlined,
-  HomeOutlined,
-  ArrowLeftOutlined,
-  ArrowRightOutlined,
-} from "@ant-design/icons";
+
 import { useEffect } from "react";
 
 import "@splidejs/react-splide/css";

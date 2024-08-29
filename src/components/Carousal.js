@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { ArrowLeftOutlined, ArrowRightOutlined } from "@ant-design/icons";
 import { Button } from "antd";
-const CustomCarousal = ({ images }) => {
+const CustomCarousal = ({title, images }) => {
     const splideRef = useRef();
 
     const thumbsOptions = {
@@ -32,7 +32,7 @@ const CustomCarousal = ({ images }) => {
     <div className="w-full flex justify-center items-center">
       <div className="w-4/6 flex flex-col  justify-center items-center gap-20 my-16">
         <div className="w-full flex justify-between items-center gap-6">
-          <h2 className="text-2xl font-medium">Our Gallery</h2>
+          <h2 className="text-2xl font-medium border-b-2 hover:border-black transition-all duration-150">{title ? title : "Our Gallery"}</h2>
           <span className="flex justify-between items-center gap-6 ">
             <ArrowLeftOutlined className="text-4xl hover:opacity-70 cursor-pointer" onClick={prev} />
             <ArrowRightOutlined className="text-4xl hover:opacity-70 cursor-pointer" onClick={next} />
